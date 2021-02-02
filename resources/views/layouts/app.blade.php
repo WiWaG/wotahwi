@@ -31,6 +31,13 @@
             <main>
                 {{ $slot }}
             </main>
+
+            <!-- Footer Content -->
+            <footer>
+            <p class="text-center">
+                &copy; Wotahwi Groep bij CodeGorilla
+            </p>
+            </footer>
         </div>
     </body>
 </html>
