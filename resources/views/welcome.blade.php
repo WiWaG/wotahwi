@@ -4,5 +4,4 @@
             {{ __('Landing Page') }}
         </h2>
     @endsection
-
 </x-app-layout>
