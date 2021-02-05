@@ -18,7 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
-Route::get('/rooms', [RoomController::class, 'index']);
+Route::resource('/rooms', RoomController::class)->only('index', 'show');
 
 
 Route::get('/dashboard', function () {
