@@ -23,6 +23,10 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();
+            $table->string('mollie_customer_id')->nullable();
+            $table->string('mollie_mandate_id')->nullable();
+            $table->decimal('tax_percentage', 6, 4)->default(0); // optional
+            $table->text('extra_billing_information')->nullable(); // optional
         });
     }
 
