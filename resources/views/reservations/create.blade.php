@@ -10,12 +10,12 @@
         @endforeach
     </select>
 
-    {{-- Datapicker --}}
+    {{-- Datepicker --}}
     <div>
-        <label for="start-date">Begin datum</label>
+        <label for="start-date">Aankomst datum</label>
         <input type="date" name="start_date" id="start-date" required>
 
-        <label for="end-date">Eind datum</label>
+        <label for="end-date">Vertrek datum</label>
         <input type="date" name="end_date" id="end-date" required>
     </div>
 

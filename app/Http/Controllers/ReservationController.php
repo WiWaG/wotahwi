@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Reservation;
 use App\Models\Room;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ReservationController extends Controller
 {
@@ -36,7 +37,23 @@ class ReservationController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
+        $attributes = request(['room_id', 'start_date', 'end_date']);
+        $attributes['user_id'] = Auth::user()->id;
+
+        // Get total price
+        $nights = date_diff(
+            date_create($request['start_date']),
+            date_create($request['end_date'])
+        )->format('%a');
+
+        $priceNight = Room::findOrFail($request['room_id'])->value('price_night');
+        $attributes['price_total'] = $nights * $priceNight;
+
+        $attributes['is_payed'] = 0;
+
+        $reservation = new Reservation($attributes);
+        $reservation->save();
+        return redirect(route('reservations.show', ['reservation' => $reservation]));
     }
 
     /**
@@ -47,7 +64,7 @@ class ReservationController extends Controller
      */
     public function show(Reservation $reservation)
     {
-        //
+        return 'Reservatie gelukt';
     }
 
     /**

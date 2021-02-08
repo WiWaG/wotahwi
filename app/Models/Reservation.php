@@ -20,6 +20,7 @@ class Reservation extends Model
         'end_date',
         'price_total',
         'room_id',
-        'user_id'
+        'user_id',
+        'is_payed'
     ];
 }
