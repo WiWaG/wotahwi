@@ -9,5 +9,3 @@ const rangepicker = new DateRangePicker(elem, {
 	minDate       : new Date(),
 	maxDate       : new Date(new Date().setFullYear(new Date().getFullYear() + 1))
 });
-
-console.log(bookedDates);
