@@ -14,7 +14,7 @@ return [
      * @link https://docs.mollie.com/reference/v2/payments-api/create-payment#parameters
      * @example 'nl_NL'
      */
-    'locale' => null,
+    'locale' => 'nl_NL',
 
     /**
      * Used for generating Order numbers, used in Orders and related Invoices.
