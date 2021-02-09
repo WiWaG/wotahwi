@@ -23,4 +23,6 @@ class Reservation extends Model
         'user_id',
         'is_payed'
     ];
+
+
 }
