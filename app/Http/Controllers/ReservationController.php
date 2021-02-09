@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Reservation;
 use App\Models\Room;
+use DateInterval;
+use DatePeriod;
+use DateTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -26,7 +29,28 @@ class ReservationController extends Controller
      */
     public function create()
     {
-        return view('reservations.create', ['rooms' => Room::select('id', 'name', 'price_night as price', 'beds')->get()]);
+        $reservations = Reservation::where('end_date', '>', date('Y-m-d'))->get();
+
+        $bookedDates = [];
+
+        foreach ($reservations as $reservation) {
+            $begin = new DateTime($reservation->start_date);
+            $end = new DateTime($reservation->end_date);
+
+            // $end = $end->modify('+1 day');
+
+            $interval = new DateInterval('P1D');
+            $daterange = new DatePeriod($begin, $interval, $end);
+
+            foreach ($daterange as $date) {
+                array_push($bookedDates, $date->format('Y-m-d'));
+            }
+        }
+
+        return view('reservations.create', [
+            'rooms' => Room::select('id', 'name', 'price_night as price', 'beds')->get(),
+            'bookedDates' => $bookedDates
+            ]);
     }
 
     /**
@@ -53,6 +77,7 @@ class ReservationController extends Controller
 
         $reservation = new Reservation($attributes);
         $reservation->save();
+
         return redirect(route('reservations.show', ['reservation' => $reservation]));
     }
 
