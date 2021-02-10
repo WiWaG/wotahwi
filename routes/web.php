@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\RoomController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,6 +21,7 @@ Route::get('/', function () {
 
 Route::resource('/rooms', RoomController::class)->only('index', 'show');
 
+Route::resource('reservations', ReservationController::class)->middleware(['auth']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

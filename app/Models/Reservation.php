@@ -9,4 +9,20 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Reservation extends Model
 {
     use HasFactory, SoftDeletes;
+
+    /**
+    * The attributes that are mass assignable.
+    *
+    * @var array
+    */
+    protected $fillable = [
+        'start_date',
+        'end_date',
+        'price_total',
+        'room_id',
+        'user_id',
+        'is_payed'
+    ];
+
+
 }
