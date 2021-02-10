@@ -29,23 +29,7 @@ class ReservationController extends Controller
      */
     public function create()
     {
-        $reservations = Reservation::where('end_date', '>', date('Y-m-d'))->get();
-
-        $bookedDates = [];
-
-        foreach ($reservations as $reservation) {
-            $begin = new DateTime($reservation->start_date);
-            $end = new DateTime($reservation->end_date);
-
-            // $end = $end->modify('+1 day');
-
-            $interval = new DateInterval('P1D');
-            $daterange = new DatePeriod($begin, $interval, $end);
-
-            foreach ($daterange as $date) {
-                array_push($bookedDates, $date->format('Y-m-d'));
-            }
-        }
+        $bookedDates = $this->getBookedDates();
 
         return view('reservations.create', [
             'rooms' => Room::select('id', 'name', 'price_night as price', 'beds')->get(),
@@ -124,5 +108,28 @@ class ReservationController extends Controller
     public function destroy(Reservation $reservation)
     {
         //
+    }
+
+    public function getBookedDates()
+    {
+        $reservations = Reservation::where('end_date', '>', date('Y-m-d'))->get();
+
+        $bookedDates = [];
+
+        foreach ($reservations as $reservation) {
+            $begin = new DateTime($reservation->start_date);
+            $end = new DateTime($reservation->end_date);
+
+            // $end = $end->modify('+1 day');
+
+            $interval = new DateInterval('P1D');
+            $daterange = new DatePeriod($begin, $interval, $end);
+
+            foreach ($daterange as $date) {
+                array_push($bookedDates, $date->format('Y-m-d'));
+            }
+        }
+
+        return $bookedDates;
     }
 }

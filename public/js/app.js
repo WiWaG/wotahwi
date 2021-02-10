@@ -3848,6 +3848,7 @@ var rangepicker = new vanillajs_datepicker_DateRangePicker__WEBPACK_IMPORTED_MOD
   minDate: new Date(),
   maxDate: new Date(new Date().setFullYear(new Date().getFullYear() + 1))
 });
+console.log(bookedDates);
 
 /***/ }),
 
