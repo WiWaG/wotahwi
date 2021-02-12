@@ -1,3 +1,5 @@
-require('./bootstrap');
+require("./bootstrap");
 
-require('alpinejs');
+require("alpinejs");
+
+require("./datepicker");
