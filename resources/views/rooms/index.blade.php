@@ -38,41 +38,43 @@
     </div>
     <div class="flex-1">
     {{-- Overview of available rooms --}}
-        @foreach ($rooms as $room)
-
-        {{-- Room card --}}
-            <div class="w-full lg:flex mb-2">
-                <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('{{ $room->image }}')" title="Woman holding a mug">
-                </div>
-                <div class="border-r border-b border-l border-grey-light lg:border-l-0 lg:border-t lg:border-grey-light bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
-                    <div class="mb-8">
-                        <span class="text-sm text-grey-dark flex items-center">
-                            <i class="fas fa-bed text-yellow-300 mr-4"></i>
-                            {{ $room->beds }}
-                            <i class="fas fa-wifi text-yellow-300 mx-2"></i>
-                            <i class="fas fa-wheelchair text-yellow-300 mx-2"></i>
-                            <i class="fas fa-parking text-yellow-300 mx-2"></i>
-                            <i class="fas fa-bath text-gray-300 mx-2"></i>
-                        </span>
-                        <div class="text-black font-bold text-xl mb-2">
-                            <a href="/rooms/{{ $room->id }}" class="rounded-lg font-bold px-2 transition duration-300 ease-in-out hover:bg-yellow-300 hover:text-white" >{{ $room->name }}</a>
-                        </div>
-                        <p class="text-grey-darker text-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.</p>
+        <div class="flex flex-wrap">
+            @foreach ($rooms as $room)
+            <div class="p-2 w-full 2xl:w-1/2">
+                {{-- Room card --}}
+                <div class="w-full lg:flex mb-2">
+                    <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('{{ $room->image }}')" title="Woman holding a mug">
                     </div>
-                    <div class="flex items-center justify-between">
-                        <div class="text-red-500 font-bold">
-                            <h3>€ {{ $room->price }} </h3>
+                    <div class="border-r border-b border-l border-grey-light lg:border-l-0 lg:border-t lg:border-grey-light bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+                        <div class="mb-8">
+                            <span class="text-sm text-grey-dark flex items-center">
+                                <i class="fas fa-bed text-yellow-300 mr-4"></i>
+                                {{ $room->beds }}
+                                <i class="fas fa-wifi text-yellow-300 mx-2"></i>
+                                <i class="fas fa-wheelchair text-yellow-300 mx-2"></i>
+                                <i class="fas fa-parking text-yellow-300 mx-2"></i>
+                                <i class="fas fa-bath text-gray-300 mx-2"></i>
+                            </span>
+                            <div class="text-black font-bold text-xl mb-2">
+                                <a href="/rooms/{{ $room->id }}" class="rounded-lg font-bold px-2 transition duration-300 ease-in-out hover:bg-yellow-300 hover:text-white" >{{ $room->name }}</a>
+                            </div>
+                            <p class="text-grey-darker text-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.</p>
                         </div>
-                        <div>
-                            <a href="/rooms/{{ $room->id }}" class="border-2 border-yellow-300 rounded-lg font-bold px-4 py-2 transition duration-300 ease-in-out hover:bg-yellow-300 hover:text-white mr-6 ml-4">
-                            Meer info
-                            </a>
+                        <div class="flex items-center justify-between">
+                            <div class="text-red-500 font-bold">
+                                <h3>€ {{ $room->price }} </h3>
+                            </div>
+                            <div>
+                                <a href="/rooms/{{ $room->id }}" class="border-2 border-yellow-300 rounded-lg font-bold px-4 py-2 transition duration-300 ease-in-out hover:bg-yellow-300 hover:text-white mr-6 ml-4">
+                                Meer info
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-        @endforeach
+            @endforeach
+        </div>
     </div>
 </div>
 
