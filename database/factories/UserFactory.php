@@ -16,6 +16,18 @@ class UserFactory extends Factory
     protected $model = User::class;
 
     /**
+     * Configure the model factory.
+     *
+     * @return $this
+     */
+    public function configure()
+    {
+        return $this->afterCreating(function (User $user) {
+            $user->assignRole('user');
+        });
+    }
+
+    /**
      * Define the model's default state.
      *
      * @return array
