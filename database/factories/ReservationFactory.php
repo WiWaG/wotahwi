@@ -27,7 +27,6 @@ class ReservationFactory extends Factory
         $endDate = $this->faker->dateTimeInInterval($startDate, '+3 weeks');
         return [
             'user_id' => User::factory(),
-            'room_id' => $this->faker->numberBetween(1, 4),
             'start_date' => $startDate,
             'end_date' => $endDate,
             'price_total' => $this->faker->randomFloat(2, 30, 5000),

@@ -22,7 +22,7 @@ class CreateRoomsTable extends Migration
                 2,
                 true
             );
-            $table->tinyInteger('beds', false, true);
+            $table->smallInteger('beds', false, true);
             $table->text('description');
             $table->string('image_path_1');
             $table->string('image_path_2')->nullable();
