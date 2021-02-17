@@ -1,6 +1,8 @@
 <?php
 
 return [
+
+    // List of all permissions
     'permissions' => [
         'room-create',
         'room-edit',
@@ -16,6 +18,7 @@ return [
         'user-delete',
     ],
 
+    //List of all roles with according permissions. "super-admin" has all permissions assigned implicitly.
     'roles' => [
         'super-admin' => [],
         'admin' => [
