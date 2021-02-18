@@ -9,7 +9,7 @@
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
-
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
@@ -34,12 +34,9 @@
                 {{ $slot }}
             </main>
 
-            <!-- Footer Content -->
-            <footer>
-            <p class="text-center">
-                &copy; Wotahwi Groep bij CodeGorilla
-            </p>
-            </footer>
+           <!-- Footer Content -->
+        <div>@include('layouts.footer')</div>
         </div>
+        @yield('script')
     </body>
 </html>
