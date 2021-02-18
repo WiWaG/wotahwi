@@ -21,7 +21,10 @@ Route::get('/', function () {
 
 Route::resource('/rooms', RoomController::class)->only('index', 'show');
 
-Route::resource('reservations', ReservationController::class)->middleware(['auth']);
+Route::group(['middleware' =>['auth', 'role:user']], function () {
+    Route::resource('reservations', ReservationController::class);
+});
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
