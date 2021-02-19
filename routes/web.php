@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\RoomController;
 use Illuminate\Support\Facades\Route;
@@ -25,6 +26,18 @@ Route::group(['middleware' =>['auth', 'role:user']], function () {
     Route::resource('reservations', ReservationController::class);
 });
 
+//-- Admin dashboard routes
+Route::group(['middleware' =>['auth', 'role:admin'], 'prefix' => 'admin/dashboard', 'as' => 'admin.'], function () {
+    Route::get('/', [AdminController::class, 'index'])->name('dashboard');
+
+    //-- Admin dashboard rooms routes
+    Route::get('/rooms', [AdminController::class, 'roomsList'])->name('rooms.list');
+    Route::resource('/rooms', RoomController::class)->except('index', 'show');
+
+    //-- Admin dashboard reservations routes
+    Route::get('/reservations', [AdminController::class, 'reservationsList'])->name('reservations.list');
+    Route::resource('/reservations', ReservationController::class)->except('index');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
