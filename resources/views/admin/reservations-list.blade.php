@@ -16,7 +16,14 @@
             <div>
                 <a href="{{ route('admin.reservations.show', ['reservation' => $reservation]) }}">Bekijken</a>
                 <a href="{{ route('admin.reservations.edit', ['reservation' => $reservation]) }}">Aanpassen</a>
-                <a href="{{ route('admin.reservations.destroy', ['reservation' => $reservation]) }}">Verwijderen</a> {{-- Javascript voor bevestiging; Ajax call om te verwijderen? --}}
+                {{-- Javascript voor bevestiging; Ajax call om te verwijderen? --}}
+                <form action="{{ route('admin.reservations.destroy', ['reservation' => $reservation])}}"
+                    method="POST"
+                    onsubmit="return confirm('Wil je kamer {{$reservation->name}} verwijderen?')">
+                    @csrf
+                    @method('DELETE')
+                    <button id="deleteReservation">Verwijderen</button>
+                </form>
             </div>
         </div>
     @endforeach

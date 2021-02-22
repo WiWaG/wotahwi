@@ -12,10 +12,10 @@
     @csrf
     @method('PUT')
 
-    <input type="text" value=" {{ $reservation->name }}">
-    <input type="text">
-    <input type="text">
-    <input type="text">
+    <h2>Reservering {{ $reservation->id }}</h2>
+
+    <input type="date" name="start_date">
+    <input type="date" name="end_date">
     <input type="submit">
 </form>
 
