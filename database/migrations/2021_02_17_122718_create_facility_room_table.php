@@ -17,6 +17,7 @@ class CreateFacilityRoomTable extends Migration
             $table->id();
             $table->foreignId('room_id')->constrained()->onDelete('cascade');
             $table->foreignId('facility_id')->constrained()->onDelete('cascade');
+            $table->mediumInteger('quantity', false, true)->nullable();
             $table->timestamps();
             $table->unique(['room_id', 'facility_id']);
         });

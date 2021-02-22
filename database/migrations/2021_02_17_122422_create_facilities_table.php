@@ -16,7 +16,6 @@ class CreateFacilitiesTable extends Migration
         Schema::create('facilities', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->mediumInteger('quantity', false, true)->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

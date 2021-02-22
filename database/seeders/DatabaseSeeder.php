@@ -16,7 +16,10 @@ class DatabaseSeeder extends Seeder
         $this->call(RolesAndPermissionsSeeder::class);
 
         \App\Models\User::factory(10)->create();
-        \App\Models\Room::factory(4)->create();
+
+
+        $this->call(FacilitiesSeeder::class);
+
         \App\Models\Reservation::factory(20)->create();
     }
 }
