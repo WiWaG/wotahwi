@@ -1,4 +1,4 @@
-<footer x-data="{ open: false }" class="bg-yellow-600 border-b border-gray-100">
+<footer x-data="{ open: false }" class="bg-yellow-600 border-b border-gray-100 mt-4">
     <div class="container mx-auto md:flex content-center py-6">
         <div class="flex-1 p-4">
             <h4 class="text-white border-b-2 mb-2">Wotahwi B&B</h4>
