@@ -1,6 +1,6 @@
 <x-app-layout>
     @section('header')
-    <div class="w-full bg-cover bg-center" style="height:22rem; background-image: url('{{ $room->image_path_1 }}');">
+    <div class="w-full bg-cover bg-fixed bg-center" style="height:22rem; background-image: url('{{ $room->image_path_1 }}');">
         <div class="flex items-center justify-center h-full w-full bg-gray-900 bg-opacity-50">
             <div class="text-center">
                 <h1 class="text-white text-2xl font-semibold uppercase md:text-3xl"> {{ $room->name }}</h1>

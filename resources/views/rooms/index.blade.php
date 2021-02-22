@@ -58,7 +58,7 @@
                 <div class="p-2 w-full 2xl:w-1/2">
                     {{-- Room card --}}
                     <div class="w-full lg:flex mb-2">
-                        <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('{{ $room->image }}')" title="Woman holding a mug">
+                        <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover bg-center rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('{{ $room->image }}')" title="Woman holding a mug">
                         </div>
                         <div class="border-r border-b border-l border-grey-light lg:border-l-0 lg:border-t lg:border-grey-light bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
                             <div class="mb-8">
