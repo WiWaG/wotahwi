@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
 
 
         $this->call(FacilitiesSeeder::class);
+        $this->call(RoomsSeeder::class);
 
         \App\Models\Reservation::factory(20)->create();
     }

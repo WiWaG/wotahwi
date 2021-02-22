@@ -35,6 +35,14 @@ class RoomFactory extends Factory
                 'facility_id' => $facility
             ]);
             }
+
+            for ($i=0; $i < 3; $i++) {
+                DB::table('images')->insert([
+                    'room_id' => $room->id,
+                    'name' => "Kamer_$room->name"."_$i",
+                    'file_path' => $this->faker->imageUrl(640, 480, 'room', true),
+                ]);
+            }
         });
     }
 
@@ -44,10 +52,8 @@ class RoomFactory extends Factory
                 'name' => $this->faker->word(),
                 'price_night' => $this->faker->randomFloat(2, 30, 200),
 
-                'description' => $this->faker->paragraphs(),
-                // 'image_path_1' => $this->faker->imageUrl(640, 480, 'room', true),
-                // 'image_path_2' => $this->faker->imageUrl(640, 480, 'room', true),
-                // 'image_path_3' => $this->faker->imageUrl(640, 480, 'room', true),
+                'description' => $this->faker->paragraphs(3, true),
+
         ];
     }
 }
