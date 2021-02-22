@@ -14,7 +14,7 @@ class RoomController extends Controller
      */
     public function index()
     {
-        return view('rooms.index', ['rooms' => Room::select('id', 'name', 'price_night as price', 'beds', 'image_path_1 as image')->get()]);
+        return view('rooms.index', ['rooms' => Room::select('id', 'name', 'price_night as price')->get()]);
     }
 
     /**

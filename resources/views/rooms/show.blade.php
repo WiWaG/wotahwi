@@ -1,6 +1,7 @@
 <x-app-layout>
     @section('header')
-        <div class="w-full bg-cover bg-center" style="height:22rem; background-image: url('{{ $room->image_path_1 }}');">
+
+        <div class="w-full bg-cover bg-center" style="height:22rem; background-image: url('{{ $room->images[0]->file_path }}');">
             <div class="flex items-center justify-center h-full w-full bg-gray-900 bg-opacity-50">
                 <div class="text-center">
                     <h1 class="text-white text-2xl font-semibold uppercase md:text-3xl"> {{ $room->name }}</h1>
@@ -14,13 +15,13 @@
     <!-- flex 2 col -->
     <div class="md:flex">
         <div class="md:w-1/3">
-            <img class="" src=" {{ $room->image_path_2 }}" alt="">
-            <img class="" src=" {{ $room->image_path_3 }}" alt="">
+            <img class="" src=" {{ $room->images[1]->file_path }}" alt="">
+            <img class="" src=" {{ $room->images[2]->file_path }}" alt="">
         </div>
         <div class="md:flex-1 mx-8">
             <div class="my-10">
                 <p class="my-3">
-                    <span class="mr-3"><i class="fas fa-bed text-yellow-300 mr-4"></i> Bedden: {{ $room->beds }}</span>
+                    <span class="mr-3"><i class="fas fa-bed text-yellow-300 mr-4"></i> Bedden: {{ $room->facilities->firstWhere('name', 'beds')->pivot->quantity }}</span>
                     <span class="mx-3 text-red-500 font-bold">€ {{ $room->price_night }}</span>
                 </p>
                 <p>
