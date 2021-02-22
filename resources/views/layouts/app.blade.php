@@ -34,12 +34,9 @@
                 {{ $slot }}
             </main>
 
-            <!-- Footer Content -->
-            <footer>
-            <p class="text-center">
-                &copy; Wotahwi Groep bij CodeGorilla
-            </p>
-            </footer>
+           <!-- Footer Content -->
+        <div>@include('layouts.footer')</div>
         </div>
+        @yield('script')
     </body>
 </html>
