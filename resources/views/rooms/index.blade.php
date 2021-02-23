@@ -59,47 +59,31 @@
 
                 {{-- Room card --}}
                 <div class="w-full lg:flex mb-2">
-                    <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('{{ $room->images[0]->file_path }}')" title="Woman holding a mug">
+                    <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover bg-center rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('{{ $room->images[0]->file_path }}')" title="Woman holding a mug">
                     </div>
                     <div class="border-r border-b border-l border-grey-light lg:border-l-0 lg:border-t lg:border-grey-light bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
                         <div class="mb-8">
                             <span class="text-sm text-grey-dark flex items-center">
 
-                                {{-- bed icon --}}
-                                @if ($room->facilities->contains('name', 'beds'))
-                                <i class="fas fa-bed text-yellow-300 mr-4"></i>
+                            {{-- bed icon --}}
+                                <i class="fas fa-bed mr-4 {{ $room->facilities->contains('name', 'beds') ? 'text-yellow-300' : 'text-gray-300' }}"></i>
                                 {{ $room->facilities->firstWhere('name', 'beds')->pivot->quantity }}
-                                @else
-                                <i class="fas fa-bed text-gray-300 mr-4"></i>
-                                @endif
 
                                 {{-- wifi icon --}}
-                                @if ($room->facilities->contains('name', 'internet'))
-                                <i class="fas fa-wifi text-yellow-300 mr-4"></i>
-                                @else
-                                <i class="fas fa-wifi text-gray-300 mr-4"></i>
-                                @endif
+                                <i class="fas fa-wifi mr-4 {{ $room->facilities->contains('name', 'internet') ? 'text-yellow-300' : 'text-gray-300' }}"></i>
 
                                 {{-- weelchair icon --}}
-                                @if ($room->facilities->contains('name', 'disability_friendly'))
-                                <i class="fas fa-wheelchair text-yellow-300 mr-4"></i>
-                                @else
-                                <i class="fas fa-wheelchair text-gray-300 mr-4"></i>
-                                @endif
+                                <i class="fas fa-wheelchair mr-4 {{ $room->facilities->contains('name', 'disability_friendly') ? 'text-yellow-300' : 'text-gray-300' }}"></i>
 
                                 {{-- parking icon --}}
-                                @if ($room->facilities->contains('name', 'parking'))
-                                <i class="fas fa-parking text-yellow-300 mr-4"></i>
-                                @else
-                                <i class="fas fa-parking text-gray-300 mr-4"></i>
-                                @endif
+                                <i class="fas fa-parking mr-4 {{ $room->facilities->contains('name', 'parking') ? 'text-yellow-300' : 'text-gray-300' }}"></i>
+
+                                {{-- kitchen icon --}}
+                                <i class="fas fa-utensils mr-4 {{ $room->facilities->contains('name', 'kitchen') ? 'text-yellow-300' : 'text-gray-300' }}"></i>
 
                                 {{-- bathroom icon --}}
-                                @if ($room->facilities->contains('name', 'bathroom'))
-                                <i class="fas fa-bath text-yellow-300 mr-4"></i>
-                                @else
-                                <i class="fas fa-bath text-gray-300 mr-4"></i>
-                                @endif
+                                <i class="fas fa-bath mr-4 {{ $room->facilities->contains('name', 'bathroom') ? 'text-yellow-300' : 'text-gray-300' }}"></i>
+
                             </span>
 
                             <div class="text-black font-bold text-xl mb-2">
