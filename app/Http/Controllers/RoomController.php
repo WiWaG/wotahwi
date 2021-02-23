@@ -24,7 +24,7 @@ class RoomController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.rooms-create');
     }
 
     /**
@@ -35,7 +35,11 @@ class RoomController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // validate request
+        $room = new Room($request->all());
+        $room->save();
+
+        return redirect(route('admin.rooms.list'));
     }
 
     /**
@@ -57,7 +61,7 @@ class RoomController extends Controller
      */
     public function edit(Room $room)
     {
-        //
+        return view('admin.rooms-edit', ['room' => Room::findOrFail($room->id)]);
     }
 
     /**
@@ -69,7 +73,12 @@ class RoomController extends Controller
      */
     public function update(Request $request, Room $room)
     {
-        //
+        // validate request
+        // save update to db
+        $room->update($request->all());
+
+        // return message
+        return redirect(route('admin.rooms.list'));
     }
 
     /**
@@ -80,6 +89,7 @@ class RoomController extends Controller
      */
     public function destroy(Room $room)
     {
-        //
+        $room->delete();
+        return redirect(route('admin.rooms.list'));
     }
 }

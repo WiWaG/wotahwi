@@ -28,4 +28,9 @@ class Reservation extends Model
     {
         return $this->belongsToMany(Room::class, 'reservation_details')->withPivot('unit_price', 'vat', 'quantity')->withTimestamps();
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

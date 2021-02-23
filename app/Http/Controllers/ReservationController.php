@@ -48,6 +48,8 @@ class ReservationController extends Controller
         $attributes = request(['start_date', 'end_date']);
         $attributes['user_id'] = Auth::user()->id;
 
+        // validate request
+
         // Get total price
         $nights = date_diff(
             date_create($request['start_date']),
@@ -75,7 +77,7 @@ class ReservationController extends Controller
      */
     public function show(Reservation $reservation)
     {
-        return 'Reservatie gelukt';
+        return view('admin.reservations-show', ['reservation' => Reservation::findOrFail($reservation->id)]);
     }
 
     /**
@@ -86,7 +88,7 @@ class ReservationController extends Controller
      */
     public function edit(Reservation $reservation)
     {
-        //
+        return view('admin.reservations-edit', ['reservation' => Reservation::findOrFail($reservation->id)]);
     }
 
     /**
@@ -98,7 +100,10 @@ class ReservationController extends Controller
      */
     public function update(Request $request, Reservation $reservation)
     {
-        //
+        // validate request
+        // save update to db
+        // return message
+        return 'Reservering informatie is aangepast';
     }
 
     /**
@@ -109,10 +114,11 @@ class ReservationController extends Controller
      */
     public function destroy(Reservation $reservation)
     {
-        //
+        Reservation::destroy($reservation);
+        return redirect('admin.dashboard');
     }
 
-    public function getBookedDates()
+    protected function getBookedDates()
     {
         $reservations = Reservation::where('end_date', '>', date('Y-m-d'))->get();
 

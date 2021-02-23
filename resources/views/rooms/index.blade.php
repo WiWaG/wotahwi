@@ -51,7 +51,8 @@
         </nav>
     </div>
     <div class="flex-1">
-    {{-- Overview of available rooms --}}
+
+    <!-- Overview of available rooms -->
         <div class="flex flex-wrap">
             @foreach ($rooms as $room)
             <div class="p-2 w-full 2xl:w-1/2">

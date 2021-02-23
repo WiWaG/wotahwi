@@ -10,6 +10,12 @@ class Room extends Model
 {
     use HasFactory, SoftDeletes;
 
+    protected $fillable = [
+        'name',
+        'price_night',
+        'description',
+    ];
+
     public function images()
     {
         return $this->hasMany(Image::class);
