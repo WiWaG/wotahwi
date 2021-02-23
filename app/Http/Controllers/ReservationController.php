@@ -32,7 +32,7 @@ class ReservationController extends Controller
         $bookedDates = $this->getBookedDates();
 
         return view('reservations.create', [
-            'rooms' => Room::select('id', 'name', 'price_night as price', 'beds')->get(),
+            'rooms' => Room::select('id', 'name', 'price_night as price')->get(),
             'bookedDates' => $bookedDates
             ]);
     }
@@ -45,7 +45,7 @@ class ReservationController extends Controller
      */
     public function store(Request $request)
     {
-        $attributes = request(['room_id', 'start_date', 'end_date']);
+        $attributes = request(['start_date', 'end_date']);
         $attributes['user_id'] = Auth::user()->id;
 
         // validate request
@@ -63,6 +63,8 @@ class ReservationController extends Controller
 
         $reservation = new Reservation($attributes);
         $reservation->save();
+
+        $reservation->room()->attach($request['room_id'], ['unit_price' => $priceNight, 'vat' => 0, 'quantity' => $nights]);
 
         return redirect(route('reservations.show', ['reservation' => $reservation]));
     }

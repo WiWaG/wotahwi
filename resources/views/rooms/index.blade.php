@@ -5,6 +5,7 @@
         </h2>
     @endsection
 
+
 <!-- component -->
 <div class="md:flex flex-col md:flex-row md:min-h-screen w-full">
     <div class="flex flex-col w-full md:w-64 text-gray-700 bg-white dark-mode:text-gray-200 dark-mode:bg-gray-800 flex-shrink-0" x-data="{ open: false }">
@@ -55,20 +56,52 @@
         <div class="flex flex-wrap">
             @foreach ($rooms as $room)
             <div class="p-2 w-full 2xl:w-1/2">
+
                 {{-- Room card --}}
                 <div class="w-full lg:flex mb-2">
-                    <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('{{ $room->image }}')" title="Woman holding a mug">
+                    <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('{{ $room->images[0]->file_path }}')" title="Woman holding a mug">
                     </div>
                     <div class="border-r border-b border-l border-grey-light lg:border-l-0 lg:border-t lg:border-grey-light bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
                         <div class="mb-8">
                             <span class="text-sm text-grey-dark flex items-center">
+
+                                {{-- bed icon --}}
+                                @if ($room->facilities->contains('name', 'beds'))
                                 <i class="fas fa-bed text-yellow-300 mr-4"></i>
-                                {{ $room->beds }}
-                                <i class="fas fa-wifi text-yellow-300 mx-2"></i>
-                                <i class="fas fa-wheelchair text-gray-300 mx-2"></i>
-                                <i class="fas fa-parking text-yellow-300 mx-2"></i>
-                                <i class="fas fa-bath text-yellow-300 mx-2"></i>
+                                {{ $room->facilities->firstWhere('name', 'beds')->pivot->quantity }}
+                                @else
+                                <i class="fas fa-bed text-gray-300 mr-4"></i>
+                                @endif
+
+                                {{-- wifi icon --}}
+                                @if ($room->facilities->contains('name', 'internet'))
+                                <i class="fas fa-wifi text-yellow-300 mr-4"></i>
+                                @else
+                                <i class="fas fa-wifi text-gray-300 mr-4"></i>
+                                @endif
+
+                                {{-- weelchair icon --}}
+                                @if ($room->facilities->contains('name', 'disability_friendly'))
+                                <i class="fas fa-wheelchair text-yellow-300 mr-4"></i>
+                                @else
+                                <i class="fas fa-wheelchair text-gray-300 mr-4"></i>
+                                @endif
+
+                                {{-- parking icon --}}
+                                @if ($room->facilities->contains('name', 'parking'))
+                                <i class="fas fa-parking text-yellow-300 mr-4"></i>
+                                @else
+                                <i class="fas fa-parking text-gray-300 mr-4"></i>
+                                @endif
+
+                                {{-- bathroom icon --}}
+                                @if ($room->facilities->contains('name', 'bathroom'))
+                                <i class="fas fa-bath text-yellow-300 mr-4"></i>
+                                @else
+                                <i class="fas fa-bath text-gray-300 mr-4"></i>
+                                @endif
                             </span>
+
                             <div class="text-black font-bold text-xl mb-2">
                                 <a href="/rooms/{{ $room->id }}" class="rounded-lg font-bold px-2 transition duration-300 ease-in-out hover:bg-yellow-300 hover:text-white" >{{ $room->name }}</a>
                             </div>
