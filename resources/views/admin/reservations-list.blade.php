@@ -12,7 +12,7 @@
 
     @foreach ($reservations as $reservation)
         <div class="m-5 w-full">
-            <h2>{{ $reservation->id }}, {{ $reservation->start_date}}, {{ $reservation->end_date }} </h2>
+            <h2>{{ $reservation->id }}, {{$reservation->room}}, {{ $reservation->start_date}}, {{ $reservation->end_date }} </h2>
             <div>
                 <a href="{{ route('admin.reservations.show', ['reservation' => $reservation]) }}">Bekijken</a>
                 <a href="{{ route('admin.reservations.edit', ['reservation' => $reservation]) }}">Aanpassen</a>

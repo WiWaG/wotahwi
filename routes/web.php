@@ -22,12 +22,12 @@ Route::get('/', function () {
 
 Route::resource('/rooms', RoomController::class)->only('index', 'show');
 
-Route::group(['middleware' =>['auth', 'role:user']], function () {
+Route::group(['middleware' =>['auth', 'role:user|super-admin']], function () {
     Route::resource('reservations', ReservationController::class);
 });
 
 //-- Admin dashboard routes
-Route::group(['middleware' =>['auth', 'role:admin'], 'prefix' => 'admin/dashboard', 'as' => 'admin.'], function () {
+Route::group(['middleware' =>['auth', 'role:admin|super-admin'], 'prefix' => 'admin/dashboard', 'as' => 'admin.'], function () {
     Route::get('/', [AdminController::class, 'index'])->name('dashboard');
 
     //-- Admin dashboard rooms routes
