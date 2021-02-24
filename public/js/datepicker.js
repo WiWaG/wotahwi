@@ -17,11 +17,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 flatpickr__WEBPACK_IMPORTED_MODULE_0__.default.localize(flatpickr_dist_l10n_nl_js__WEBPACK_IMPORTED_MODULE_1__.Dutch);
-
-console.log((flatpickr_dist_plugins_rangePlugin__WEBPACK_IMPORTED_MODULE_2___default()));
-var testhallo = "hallo";
-console.log(flatpickr__WEBPACK_IMPORTED_MODULE_0__.default);
-console.log(testhallo); // Setup datepicker with blocked dates for selected room
+ // Setup datepicker with blocked dates for selected room
 
 var roomSelect = document.querySelector("#room-select");
 var blockedDates = bookedDates[roomSelect.value];

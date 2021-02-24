@@ -2,12 +2,7 @@ import flatpickr from "flatpickr";
 import { Dutch } from "flatpickr/dist/l10n/nl.js";
 flatpickr.localize(Dutch);
 import rangePlugin from "flatpickr/dist/plugins/rangePlugin";
-console.log(rangePlugin);
 
-let testhallo = "hallo";
-
-console.log(flatpickr);
-console.log(testhallo);
 // Setup datepicker with blocked dates for selected room
 
 const roomSelect = document.querySelector("#room-select");
