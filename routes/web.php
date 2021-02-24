@@ -44,3 +44,13 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+
+//-- Subscribe Mail
+Route::get('/welcome', 'App\Http\Controllers\SubscribeController@show');
+Route::post('/subscribe', 'App\Http\Controllers\SubscribeController@store');
+
+Route::get('/testmail', function () {
+    return new App\Mail\Subscribe('Nieuwsbrief');
+});
+
+
