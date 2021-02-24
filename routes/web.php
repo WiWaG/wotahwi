@@ -23,7 +23,8 @@ Route::get('/', function () {
 Route::resource('/rooms', RoomController::class)->only('index', 'show');
 
 Route::group(['middleware' =>['auth', 'role:user|super-admin']], function () {
-    Route::resource('reservations', ReservationController::class);
+    Route::get('reservations/create/{room?}', [ReservationController::class, 'create']);
+    Route::resource('reservations', ReservationController::class)->except('create');
 });
 
 //-- Admin dashboard routes
