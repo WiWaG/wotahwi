@@ -1,5 +1,4 @@
 <x-app-layout>
-<link rel="stylesheet" href="../css/datepicker.css">
     @section('header')
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Reserveer form') }}
@@ -7,7 +6,7 @@
     @endsection
     <div class="container mx-auto">
         {{-- Reservation Form --}}
-        <form action="{{ route('reservations.store') }}" method="POST">
+        <form action="{{ route('reservations.store') }}" method="POST" id="reservation-form">
         @csrf
         <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 m-4 flex flex-col my-2">
             <div class="-mx-3 my-2">
@@ -19,54 +18,59 @@
                     <div class="relative">
                         <select class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded" name="room_id" id="room-select" required>
                             @foreach ($rooms as $room)
-                                <option value="{{ $room->id }}"> {{ $room->name}} </option>
+                                <option value="{{ $room->id }}" {{ (isset($chosen_room) && $room->id === $chosen_room->id ? 'selected' : '' ) }}>
+                                    {{ $room->name}}
+                                </option>
                             @endforeach
                         </select>
                     </div>
                 </div>
             </div>
+
+
             {{-- Datepicker --}}
-            <div id="datepicker" class="-mx-3 md:flex mb-6">
-            <div class="md:w-1/2 px-3 mb-6 md:mb-0">
-                <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="start-date">
-                Aankomst
-                </label>
-                <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" id="start-date" type="text" name="start_date" required>
-            </div>
-            <div class="md:w-1/2 px-3">
-                <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="end-date">
-                Vertrek
-                </label>
-                <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="end-date" type="text" name="end_date" required>
-            </div>
-            </div>
-            <div class="-mx-3 md:flex mb-2">
-            <div class="md:w-1/2 px-3 mb-6 md:mb-0">
-                {{-- Persons --}}
-                <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="persons">
-                Aantal personen
-                </label>
-                <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" type="number" name="persons" id="persons" min="1" max="10" placeholder="Aantal personen">
-            </div>
-            <div class="md:w-1/2 px-3">
-                {{-- Pay select --}}
-                <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="pay">
-                Betaal selecteren
-                </label>
-                <div class="relative">
-                    <select class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded" id="pay">
-                        <option>iDeal</option>
-                        <option>PayPal</option>
-                    </select>
+            <div class="-mx-3 md:flex mb-6">
+                <div class="md:w-1/2 px-3 mb-6 md:mb-0">
+                    <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="start-date">
+                    Aankomst
+                    </label>
+                    <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" id="start-date" type="text" name="start_date" required>
+                </div>
+                <div class="md:w-1/2 px-3">
+                    <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="end-date">
+                    Vertrek
+                    </label>
+                    <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="end-date" type="text" name="end_date" required>
                 </div>
             </div>
-            <div class="md:w-1/2 px-3">
-                {{-- Total Price --}}
-                <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="price-total">
-                Total Price
-                </label>
-                <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" type="number" name="price_total" id="price-total" value="110.80" disabled>
-            </div>
+
+            <div class="-mx-3 md:flex mb-2">
+                <div class="md:w-1/2 px-3 mb-6 md:mb-0">
+                    {{-- Persons --}}
+                    <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="persons">
+                        Aantal personen
+                    </label>
+                    <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" type="number" name="persons" id="persons" min="1" max="10" placeholder="Aantal personen">
+                </div>
+                <div class="md:w-1/2 px-3">
+                    {{-- Pay select --}}
+                    <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="pay">
+                    Betaal selecteren
+                    </label>
+                    <div class="relative">
+                        <select class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded" id="pay">
+                            <option>iDeal</option>
+                            <option>PayPal</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="md:w-1/2 px-3">
+                    {{-- Total Price --}}
+                    <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="price-total">
+                    Totale Prijs
+                    </label>
+                    <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" type="number" name="price_total" id="price-total" value="" readonly>
+                </div>
             </div>
             <div class="-mx-3 my-8">
                 <div class="md:w-1/2 px-3">
@@ -80,47 +84,37 @@
         </form>
     </div>
 
+    @section('scripts')
+    <script>
+        const bookedDates = @json($bookedDates);
 
-    <!-- <link rel="stylesheet" href="../css/datepicker.css">
-    <h1>Reserveer form</h1>
+        const priceTotalInput = document.querySelector('#price-total');
 
-    {{-- Reservation Form --}}
-    <form action="{{ route('reservations.store') }}" method="POST">
-        @csrf
-        {{-- Room Select --}}
-        <select name="room_id" id="room-select" required>
-            @foreach ($rooms as $room)
-                <option value="{{ $room->id }}"> {{ $room->name}} </option>
-            @endforeach
-        </select>
+        const pricesNight = @json($rooms->pluck('price','id'));
 
-        {{-- Datepicker --}}
-        <div id="datepicker">
-            <input type="text" name="start_date" required>
-            <span>tot</span>
-            <input type="text" name="end_date" required>
-        </div>
+        const formElements = document.querySelectorAll('#reservation-form input, #reservation-form select').forEach( elem => {
 
-        {{-- Persons --}}
-        <label for="persons">Aantal personen</label>
-        <input type="number" name="persons" id="persons">
+            elem.addEventListener("change", () => {
+            let days = getDays(document.querySelector('#start-date').value, document.querySelector('#end-date').value);
+            priceTotalInput.value = pricesNight[document.querySelector('#room-select').value] * days;
 
-        {{-- Total Price --}}
-        <div>
-            <input type="number" name="price_total" id="price-total" value="110.80" disabled>
-        </div>
+            });
 
-        {{-- Pay select --}}
+        });
 
-        <div>
-            <button type="submit">Reserveren</button>
-        </div>
-    </form> -->
+        function getDays(startDate, endDate) {
+            let startDateParts = startDate.split("-");
+            let endDateParts = endDate.split("-");
+            let dateDiff = new Date(+endDateParts[2], endDateParts[1] - 1, +endDateParts[0]) - new Date(+startDateParts[2], startDateParts[1] - 1, +startDateParts[0]);
+            let days = dateDiff / (1000 * 60 * 60 * 24);
+            return days;
+        }
+
+    </script>
+    <script src="{{ asset('js/datepicker.js') }}"></script>
+    @endsection
 
 </x-app-layout>
 
-<script>
-    const bookedDates = @json($bookedDates);
-</script>
 
 
