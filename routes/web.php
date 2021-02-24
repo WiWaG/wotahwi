@@ -23,7 +23,7 @@ Route::get('/', function () {
 Route::resource('/rooms', RoomController::class)->only('index', 'show');
 
 Route::group(['middleware' =>['auth', 'role:user|super-admin']], function () {
-    Route::get('reservations/create/{room?}', [ReservationController::class, 'create']);
+    Route::get('reservations/create/{room?}', [ReservationController::class, 'create'])->name('reservations.create');
     Route::resource('reservations', ReservationController::class)->except('create');
 });
 
@@ -53,5 +53,3 @@ Route::post('/subscribe', 'App\Http\Controllers\SubscribeController@store');
 Route::get('/testmail', function () {
     return new App\Mail\Subscribe('Nieuwsbrief');
 });
-
-
