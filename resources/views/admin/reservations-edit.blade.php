@@ -8,16 +8,21 @@
 
 @section('content')
 
-<form action=" {{ route('admin.reservations.update', ['reservation' => $reservation]) }} " method="POST">
-    @csrf
-    @method('PUT')
+<div class="container bg-yellow-300 p-2 lg:p-4">
+    <div class="rounded bg-white shadow-xl p-5 lg:p-20 mx-auto text-gray-800">
 
-    <h2>Reservering {{ $reservation->id }}</h2>
+        <form action=" {{ route('admin.reservations.update', ['reservation' => $reservation]) }} " method="POST">
+            @csrf
+            @method('PUT')
 
-    <input type="date" name="start_date">
-    <input type="date" name="end_date">
-    <input type="submit">
-</form>
+            <h2>Reservering {{ $reservation->id }}</h2>
+
+            <input type="date" name="start_date">
+            <input type="date" name="end_date">
+            <input class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+        </form>
+    </div>
+</div>
 
 @endsection
 
