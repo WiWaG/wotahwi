@@ -14,13 +14,14 @@
     <!-- flex 2 col -->
     <div class="md:flex">
         <div class="md:w-1/3">
-            <img class="" src=" {{ $room->images[1]->file_path }}" alt="">
-            <img class="" src=" {{ $room->images[2]->file_path }}" alt="">
+            <img class="" src=" {{ isset($room->images[1]) ? $room->images[1]->file_path : ''}} ">
+
+            <img class="" src=" {{ isset($room->images[2]) ? $room->images[2]->file_path : '' }}" alt="">
         </div>
         <div class="md:flex-1 mx-8">
             <div class="my-10">
                 <p class="my-3">
-                    <span class="mr-3"><i class="fas fa-bed text-yellow-300 mr-4"></i> Bedden: {{ $room->facilities->firstWhere('name', 'beds')->pivot->quantity }}</span>
+                    <span class="mr-3"><i class="fas fa-bed text-yellow-300 mr-4"></i> Bedden: {{ $room->facilities->contains('name', 'beds') ? $room->facilities->firstWhere('name', 'beds')->pivot->quantity : 0}}</span>
                     <span class="mx-3 text-red-500 font-bold">€ {{ $room->price_night }}</span>
                 </p>
                 <p>
@@ -33,7 +34,7 @@
                         <tr class="bg-white flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap">
                             <td class="w-full lg:w-auto p-3 text-gray-800  border border-b block lg:table-cell relative lg:static">
                                 <i class="fas fa-bed mr-4 {{ $room->facilities->contains('name', 'beds') ? 'text-yellow-300' : 'text-gray-300' }}"></i>
-                                {{ $room->facilities->firstWhere('name', 'beds')->pivot->quantity }} Bedden
+                                {{ $room->facilities->contains('name', 'beds') ? $room->facilities->firstWhere('name', 'beds')->pivot->quantity : 0}} Bedden
                             </td>
                             <td class="w-full lg:w-auto p-3 text-gray-800  border border-b block lg:table-cell relative lg:static">
                                 <i class="fas fa-wifi mr-4 {{ $room->facilities->contains('name', 'internet') ? 'text-yellow-300' : 'text-gray-300' }}"></i>
