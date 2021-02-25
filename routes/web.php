@@ -4,6 +4,8 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\RoomController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MollieWebhookController;
+use App\Http\Controllers\PayController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,3 +55,10 @@ Route::post('/subscribe', 'App\Http\Controllers\SubscribeController@store');
 Route::get('/testmail', function () {
     return new App\Mail\Subscribe('Nieuwsbrief');
 });
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
+
+Route::get('/pay/{reservation}', [PayController::class, 'preparePayment']);
+
+Route::name('webhooks.mollie')->post('webhooks/mollie', [MollieWebhookController::class, 'handleWebhookNotification']);
