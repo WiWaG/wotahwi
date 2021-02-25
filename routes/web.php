@@ -55,6 +55,10 @@ Route::post('/subscribe', 'App\Http\Controllers\SubscribeController@store');
 Route::get('/testmail', function () {
     return new App\Mail\Subscribe('Nieuwsbrief');
 });
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
+
 Route::get('/pay/{reservation}', [PayController::class, 'preparePayment']);
 
 Route::name('webhooks.mollie')->post('webhooks/mollie', [MollieWebhookController::class, 'handleWebhookNotification']);
