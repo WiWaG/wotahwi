@@ -9,6 +9,8 @@ use DatePeriod;
 use DateTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\PayController;
+
 
 class ReservationController extends Controller
 {
@@ -79,7 +81,9 @@ class ReservationController extends Controller
 
         $reservation->room()->attach($request['room_id'], ['unit_price' => $priceNight, 'vat' => 0, 'quantity' => $nights]);
 
-        return redirect(route('reservations.show', ['reservation' => $reservation]));
+        // PayController::preparePayment($reservation);
+        // return redirect(route('reservations.show', ['reservation' => $reservation]));
+        return redirect("/pay/$reservation->id");
     }
 
     /**
