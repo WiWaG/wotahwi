@@ -53,7 +53,3 @@ Route::post('/subscribe', 'App\Http\Controllers\SubscribeController@store');
 Route::get('/testmail', function () {
     return new App\Mail\Subscribe('Nieuwsbrief');
 });
-
-Route::get('/about', function () {
-    return view('about');
-})->name('about');
