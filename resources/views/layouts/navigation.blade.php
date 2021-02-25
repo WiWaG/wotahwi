@@ -18,6 +18,9 @@
                     <x-nav-link :href="route('rooms.index')" :active="request()->routeIs('rooms.index')">
                         {{ __('Kamers') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('about')" :active="request()->routeIs('about')">
+                        {{ __('Over ons') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -85,6 +88,9 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('rooms.index')" :active="request()->routeIs('rooms.index')">
                 {{ __('kamers') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('about')" :active="request()->routeIs('about')">
+                {{ __('Over ons') }}
             </x-responsive-nav-link>
         </div>
 
