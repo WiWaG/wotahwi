@@ -55,7 +55,7 @@
         <div class="flex-1">
 
             <!-- Overview of available rooms -->
-            <div class="flex flex-wrap h-screen overflow-auto">
+            <div class="flex flex-wrap max-h-screen overflow-auto">
                 @foreach ($rooms as $room)
                 <div class="p-2 w-full 2xl:w-1/2">
 
