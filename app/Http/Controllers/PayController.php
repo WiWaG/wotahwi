@@ -15,16 +15,13 @@ class PayController extends Controller
 
 
             $payment = Mollie::api()->payments->create([
-                "amount" => 
-                
+                "amount" =>     
                 [
                     "currency" => "EUR",
-                    // "value" => Reservation::get('price_total'),
                     "value" => $reservation['price_total'],
-                    // "value" =>"10.00"
                 ],
                 "description" => "blabla",
-                "redirectUrl" => 'http://404fd2ab13be.ngrok.io/reservations/create/',
+                "redirectUrl" => 'https://a0f99f6fcada.ngrok.io/reservations/show/',
                 "webhookUrl" => route('webhooks.mollie'),
                 "metadata" => [
                     "order_id" => "12345",
