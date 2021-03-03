@@ -28,7 +28,7 @@
 
                 <!-- description -->
                 <div class="description w-full sm: md:w-2/3 mt-16 text-gray-500 text-sm">
-                <p>Laravel project (codeGorilla) Webapp voor het online informeren, reserveren, boeken en betalen voor een verblijf bij WoTahWi B&B</p>
+                <p>Laravel project (codeGorilla) Webapp voor het online informeren, reserveren, boeken en betalen voor een verblijf bij wotahwi B&B</p>
                     <ul class="list-disc list-inside my-8">
                         <h3 class="text-2xl text-gray-900 font-semibold py-2">Dit project is gemaakt door middel van:</h3>
                         <li>Laravel 8.24</li>

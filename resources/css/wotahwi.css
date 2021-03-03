@@ -6,6 +6,7 @@ body {
 footer {
     background-color: #1a2e49;
     color: #b6b6b6;
+    border-top: 1px solid;
 }  
 
 nav {
@@ -25,6 +26,7 @@ nav {
 
 .bg-wotahwi {
     background-color: #1a2e49;
+    color: #b6b6b6;
 }
 
 .bg-white-wtw {
@@ -50,3 +52,8 @@ nav {
 .text-wtw {
     color: #b6b6b6;
 }
+
+.py-wtw {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }

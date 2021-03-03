@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>{{ config('app.name', 'wotahwi') }}</title>
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
@@ -19,10 +19,11 @@
 
             <!-- Page Heading -->
             @hasSection('header')
-            <header class="bg-white shadow">
-                <div class="mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                @yield('header')
-                </div>
+            <header class="md:flex flex-col md:flex-row w-full bg-white-wtw shadow">
+                <div class="flex flex-col w-full md:w-64 text-gray-700 bg-wotahwi dark-mode:text-gray-200 dark-mode:bg-gray-800 flex-shrink-0" x-data="{ open: false }"></div>
+                    <div class="flex-1 mx-auto py-3 px-4 sm:px-6 lg:px-8">
+                        @yield('header')
+                    </div>
             </header>
             @endif
 

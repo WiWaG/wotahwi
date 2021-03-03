@@ -1,7 +1,7 @@
-<footer x-data="{ open: false }" class="bg-yellow-600 border-b border-gray-100 mt-4">
+<footer x-data="{ open: false }" class="bg-yellow-600 border-b border-gray-100 mt-0">
     <div class="container mx-auto md:flex content-center py-6">
         <div class="flex-1 p-4">
-            <h4 class="text-white border-b-2 mb-2">Wotahwi B&B</h4>
+            <h4 class="text-white border-b-2 mb-2">wotahwi B&B</h4>
             <ul class="px-2">
                 <li><a href="#">Wie zijn wij</a></li>
                 <li><a href="#">Service & Contact</a></li>
@@ -22,7 +22,7 @@
         <div class="flex-1 p-4">
             <h5 class="text-white border-b-2 mb-2">Contact Info</h5>
             <ul class="px-2">
-                <li><a href="mailto:Wotahwi@codegorilla.nl"><i class="far fa-envelope mr-2"></i>Wotahwi@codegorilla.nl
+                <li><a href="mailto:wotahwi@codegorilla.nl"><i class="far fa-envelope mr-2"></i>wotahwi@codegorilla.nl
                 </a></li>
                 <li><a href="tel:06-123-45467"><i class="fas fa-phone-alt  mr-2"></i>06-123-4567
                 </a></li>
@@ -39,7 +39,7 @@
             <hr>
         </div>
         <p class="text-center">
-            &copy; Wotahwi Groep bij CodeGorilla - All rights reserved
+            &copy; wotahwi Groep bij CodeGorilla - All rights reserved
         </p>
     </div>
 </footer>

@@ -23,7 +23,7 @@
                     <h3 class="border-b-2">B&B info</h3>
                 </a>
                 <ul class="px-4 text-sm">
-                    <li><a href="mailto:Wotahwi@codegorilla.nl"><i class="far fa-envelope mr-2"></i>Wotahwi@codegorilla.nl
+                    <li><a href="mailto:wotahwi@codegorilla.nl"><i class="far fa-envelope mr-2"></i>wotahwi@codegorilla.nl
                         </a></li>
                     <li><a href="tel:06-123-45467"><i class="fas fa-phone-alt  mr-2"></i>06-123-4567
                         </a></li>
@@ -31,7 +31,7 @@
                 </ul>
                 <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">
                     <h3 class="border-b-2 mb-2">Over ons</h3>
-                    <p>Laravel project (codeGorilla). Webapp voor het online informeren, reserveren, boeken en betalen voor een verblijf bij WoTahWi B&B</p>
+                    <p>Laravel project (codeGorilla). Webapp voor het online informeren, reserveren, boeken en betalen voor een verblijf bij wotahwi B&B</p>
                 </a>
                 <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="{{ route('reservations.create')}}">
                     <h3 class="border-b-2">Reserveren</h3>

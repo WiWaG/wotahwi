@@ -1,6 +1,6 @@
 @component('mail::message')
 
-# Abonneer Wotahwi B&B {{ $topic }}
+# Abonneer wotahwi B&B {{ $topic }}
 
 Geachte heer/mevrouw
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores soluta voluptatibus nemo! Quisquam, eaque officiis illo maiores necessitatibus dolorum dolore. Illum dolorum vero minus quam ut quos aliquid quod facere.

@@ -92,7 +92,7 @@
                     @error('email')
                     <p class="text-xs text-red-500">{{ $message }}</p>
                     @enderror
-                    <button class=" p-2  w-1/3  bg-white-wtw rounded-r-lg  text-wtw hover: bg-yellow-300 " type="submit">Abonneren</button>
+                    <button class=" p-2  w-1/3  bg-white-wtw rounded-r-lg hover: bg-yellow-300 " type="submit">Abonneren</button>
                     @if(session('message'))
                     <p class="text-xs text-green-500 mt-2">{{ session('message') }}</p>
                     @endif

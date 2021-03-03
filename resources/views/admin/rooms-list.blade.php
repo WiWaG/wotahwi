@@ -22,7 +22,7 @@
         <div class="shadow overflow-hidden border border-gray-200 sm:rounded-lg m-6">
 
             <table class="w-full divide-y divide-gray-200">
-                <thead class="bg-gray-50">
+                <thead class="bg-wotahwi">
                     <tr>
                         <th class="px-2 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                         </th>
