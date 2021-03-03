@@ -1,3 +1,4 @@
+<div class="bg-wotahwi">
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
@@ -19,7 +20,7 @@
             <div>
                 <x-label for="email" :value="__('Email')" />
 
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+                <x-input id="email" class="rounded-md-wtw block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
             </div>
 
             <!-- Password -->
@@ -54,3 +55,4 @@
         </form>
     </x-auth-card>
 </x-guest-layout>
+</div>

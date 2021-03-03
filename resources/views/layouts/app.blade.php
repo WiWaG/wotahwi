@@ -12,7 +12,6 @@
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
@@ -21,7 +20,7 @@
             <!-- Page Heading -->
             @hasSection('header')
             <header class="bg-white shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                <div class="mx-auto py-6 px-4 sm:px-6 lg:px-8">
                 @yield('header')
                 </div>
             </header>
