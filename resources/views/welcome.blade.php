@@ -82,8 +82,8 @@
   background-image: url('https://images.unsplash.com/photo-1495754149474-e54c07932677?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80');
 ">
         <div class=" p-10  py-20  flex  flex-col  flex-wrap  justify-center  content-center">
-            <div class=" m-0  p-0  text-3xl  text-white  antialiased  text-center">Ontvang onze updates</div>
-            <div class=" m-0  p-0  text-xl  text-white  antialiased  text-center">Lees meer over evenementen en ander nieuws</div>
+            <div class=" m-0  p-0  text-3xl  text-wtw  antialiased  text-center">Ontvang onze updates</div>
+            <div class=" m-0  p-0  text-xl  text-wtw  antialiased  text-center">Lees meer over evenementen en ander nieuws</div>
 
             <form method="POST" action="/subscribe">
                 <div class=" mt-3  flex  flex-row  flex-wrap">
@@ -92,7 +92,7 @@
                     @error('email')
                     <p class="text-xs text-red-500">{{ $message }}</p>
                     @enderror
-                    <button class=" p-2  w-1/3  bg-yellow-400 rounded-r-lg  text-white hover: bg-yellow-300 " type="submit">Abonneren</button>
+                    <button class=" p-2  w-1/3  bg-white-wtw rounded-r-lg  text-wtw hover: bg-yellow-300 " type="submit">Abonneren</button>
                     @if(session('message'))
                     <p class="text-xs text-green-500 mt-2">{{ session('message') }}</p>
                     @endif
