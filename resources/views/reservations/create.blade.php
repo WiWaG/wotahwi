@@ -1,14 +1,10 @@
 <x-app-layout>
-    @section('header')
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Reserveer form') }}
-        </h2>
-    @endsection
+    
     <div class="container mx-auto">
         {{-- Reservation Form --}}
         <form action="{{ route('reservations.store') }}" method="POST" id="reservation-form">
         @csrf
-        <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 m-4 flex flex-col my-2">
+        <div class="bg-white-wtw shadow-md rounded px-8 pt-6 pb-8 m-4 flex flex-col my-2">
             <div class="-mx-3 my-2">
                 <div class="md:w-1/2 px-3 mb-6 md:mb-0">
                 {{-- Room Select --}}
