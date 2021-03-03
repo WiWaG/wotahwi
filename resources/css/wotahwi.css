@@ -1,0 +1,41 @@
+
+body {
+    background-color: #f8702d;
+  }
+  
+footer {
+    background-color: #1a2e49;
+    color: #b6b6b6;
+}  
+
+nav {
+    /* background-color: #549dae; */
+    background-color: #1a2e49;
+    color: #b6b6b6;
+}
+.rounded-md {
+    background-color: #6b609e;
+    color: #000;
+}
+
+.rounded-md-wtw {
+    background-color: #b6b6b6;
+    color: #000;
+}
+
+.bg-wotahwi {
+    background-color: #1a2e49;
+}
+
+.bg-white-wtw {
+    background-color: #f8702d;
+}
+
+.bg-white {
+    background-color: #6b609e;
+}
+
+.shadow-lg {
+    --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
