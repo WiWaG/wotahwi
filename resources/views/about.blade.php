@@ -1,10 +1,4 @@
 <x-app-layout>
-    @section('header')
-    <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-        {{ __('Over ons') }}
-    </h2>
-    @endsection
-
     <div class="lg:flex">
         <div class="flex-1 bg-white pb-10">
             <div class="xl:mx-20 mx-10">
@@ -108,7 +102,7 @@
 
             </div>
         </div>
-        <div class="flex-1"><img class="w-full" src="https://images.unsplash.com/photo-1595236367166-d1f30e619fc3?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=658&q=80" alt=""></div>
+        <div class="flex-auto"><img class="w-full" src="https://images.unsplash.com/photo-1595236367166-d1f30e619fc3?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=658&q=80" alt=""></div>
     </div>
 
 </x-app-layout>

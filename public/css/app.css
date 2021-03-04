@@ -17620,57 +17620,61 @@ span.flatpickr-weekday{
 }
 
 body {
-  background-color: #f8702d;
+  background-color: #3fc1c9;
 }
 
 footer {
-  background-color: #1a2e49;
-  color: #b6b6b6;
+  background-color: #364f6b;
+  color: #3fc1c9;
   border-top: 1px solid;
 }
 
 nav {
   /* background-color: #549dae; */
-  background-color: #1a2e49;
-  color: #b6b6b6;
+  background-color: #364f6b;
+  color: #3fc1c9;
 }
 
 .rounded-md {
-  background-color: #6b609e;
+  background-color: #fc5185;
   color: #000;
 }
 
 .rounded-md-wtw {
-  background-color: #b6b6b6;
-  color: #000;
+  background-color: rgb(61, 60, 60);
+  color: #3fc1c9;
 }
 
 .bg-wotahwi {
-  background-color: #1a2e49;
-  color: #b6b6b6;
+  background-color: #364f6b;
+  color: #3fc1c9;
 }
 
 .bg-white-wtw {
-  background-color: #f8702d;
+  background-color: #3fc1c9;
 }
 
 .bg-white {
-  background-color: #6b609e;
+  background-color: #fc5185;
 }
 
 .shadow-lg {
   --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #000), var(--tw-ring-shadow, 0 0 #000), var(--tw-shadow);
 }
 
 @media (min-width: 1024px) {
   .lg\:block {
-    fill: #f8702d;
+    fill: #3fc1c9;
+  }
+
+  .lg\:right-0 {
+    right: 130px;
   }
 }
 
 .text-wtw {
-  color: #b6b6b6;
+  color: #3fc1c9;
 }
 
 .py-wtw {

@@ -1,5 +1,5 @@
 <x-app-layout>
-    @section('header')
+    
 
     <div class="w-full bg-cover bg-center" style="height:22rem; background-image: url('{{ $room->images[0]->file_path }}');">
         <div class="flex items-center justify-center h-full w-full bg-gray-900 bg-opacity-50">
@@ -8,7 +8,7 @@
             </div>
         </div>
     </div>
-    @endsection
+ 
 
     {{-- Room information--}}
     <!-- flex 2 col -->
@@ -65,8 +65,8 @@
                 </table>
             </div>
 
-            <form class="mx-auto md:flex" action="/reservations" method="GET">
-                <button class="ml-0 px-8 rounded-lg bg-yellow-400  text-gray-800 font-bold p-4 uppercase border-yellow-500 ... transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110" type="submit">Reserveren</button>
+            <form class="mx-auto md:flex" action="/reservations/create" method="GET">
+                <button class="ml-0 px-8 rounded-lg bg-white  text-gray-800 font-bold p-4 uppercase border-yellow-500 ... transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110" type="submit">Reserveren</button>
             </form>
         </div>
     </div>
