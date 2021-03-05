@@ -1,10 +1,5 @@
 @extends('layouts.dashboard')
 
-@section('header')
-<h2 class="font-semibold text-xl text-gray-800 leading-tight">
-    {{ __('Admin Dashboard') }}
-</h2>
-@endsection
 
 @section('content')
 
@@ -15,7 +10,7 @@
 
         <form action=" {{ route('admin.rooms.store') }} " method="POST">
             @csrf
-            <h1 class="block text-gray-700 font-bold mb-2 text-xl text-center">Kamer toevoegen</h1>
+            <h1 class="block text-gray-700 font-bold mx-6 mb-2 text-xl text-center">Kamer toevoegen</h1>
             <br>
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="room-name">

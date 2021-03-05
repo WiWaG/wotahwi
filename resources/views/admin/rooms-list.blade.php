@@ -1,16 +1,10 @@
 @extends('layouts.dashboard')
 
-    @section('header')
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Admin Dashboard') }}
-        </h2>
-    @endsection
-
 @section('content')
 
 <div class="container bg-yellow-300 p-2 lg:p-4">
 
-    <div class="my-10">
+    <div class="mx-6 my-10">
         <a href="{{ route('admin.rooms.create') }}"
         class="px-8 rounded-lg bg-white text-gray-800 font-bold p-4 uppercase border-yellow-500 hover:shadow-xl">
         Kamer toevoegen

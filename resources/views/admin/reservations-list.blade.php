@@ -1,10 +1,5 @@
 @extends('layouts.dashboard')
 
-    @section('header')
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Admin Dashboard') }}
-        </h2>
-    @endsection
 
 @section('content')
 <div class="container bg-yellow-300 p-2 lg:p-4">

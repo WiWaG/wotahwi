@@ -6,7 +6,7 @@
                     <polygon points="50,0 100,0 50,100 0,100" />
                 </svg>
 
-                <main class="lg:pt-20 md:pt-10 mx-auto max-w-7xl px-4  sm:px-6 lg:px-8 ">
+                <main class="lg:pt-20 md:pt-10 mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8 ">
                     <div class="sm:text-center lg:text-left">
                         <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
                             <span class="block xl:inline">B&B in Groningen</span>
@@ -92,7 +92,7 @@
                     @error('email')
                     <p class="text-xs text-red-500">{{ $message }}</p>
                     @enderror
-                    <button class=" p-2  w-1/3  bg-white-wtw rounded-r-lg hover: bg-yellow-300 " type="submit">Abonneren</button>
+                    <button class=" p-2  w-1/3  bg-white rounded-r-lg hover: bg-yellow-300 " type="submit">Abonneren</button>
                     @if(session('message'))
                     <p class="text-xs text-green-500 mt-2">{{ session('message') }}</p>
                     @endif

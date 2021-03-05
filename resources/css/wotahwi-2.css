@@ -35,6 +35,7 @@ nav {
 
 .bg-white {
     background-color: #fc5185;
+    color:black;
 }
 
 .shadow-lg {
@@ -56,4 +57,26 @@ nav {
 .py-wtw {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
+  }
+
+  h4 {
+    font-size: larger;
+    font-weight: bolder;
+  }
+
+  .block.mt-4 {
+    color: black;
+  }
+
+  .flatpickr-calendar {
+    background:#fc5185;
+    box-shadow:1px 0 0 #3fc1c9,-1px 0 0 #3fc1c9,0 1px 0 #3fc1c9,0 -1px 0 #364f6b,0 3px 13px rgb(54, 79, 107);
+  }
+
+  span.flatpickr-weekday {
+    color:rgb(0, 0, 0);
+  }
+
+  .flatpickr-day {
+    color:#000;
   }
